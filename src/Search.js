@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { navigate } from "@reach/router";
 import Autocomplete from "./Autocomplete";
 import Emoji from "./Emoji";
-import * as styled from "./Search.style";
+import * as Styled from "./Search.style";
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,15 +25,15 @@ function Search() {
   };
 
   return (
-    <styled.Container isFocused={isFocused}>
-      <styled.Form
+    <Styled.Container isFocused={isFocused}>
+      <Styled.Form
         onSubmit={e => {
           e.preventDefault();
           inputRef.current.blur();
           navigate(`/?query=${searchTerm}`);
         }}
       >
-        <styled.Input
+        <Styled.Input
           type="text"
           placeholder="Search for a brewery"
           autocomplete="off"
@@ -44,12 +44,12 @@ function Search() {
           onFocus={handleFocus}
           onBlur={handleBlur}
         />
-        <styled.Button type="submit" active={searchTerm.length}>
+        <Styled.Button type="submit" active={searchTerm.length}>
           <Emoji label="search" symbol="🔍" />
-        </styled.Button>
-      </styled.Form>
+        </Styled.Button>
+      </Styled.Form>
       {isFocused && <Autocomplete query={searchTerm} />}
-    </styled.Container>
+    </Styled.Container>
   );
 }
 

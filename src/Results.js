@@ -7,15 +7,15 @@ import Loader from "./Loader";
 
 import Address from "./Address";
 import { SectionWithMargin } from "./styled";
-import * as styled from "./Results.style";
+import * as Styled from "./Results.style";
 
 function Result({ result }) {
   return (
-    <styled.Result>
-      <styled.Link to={`/${result.id}`}>{result.name}</styled.Link>
-      <styled.Type>Brewery Type: {result.brewery_type}</styled.Type>
+    <Styled.Result>
+      <Styled.Link to={`/${result.id}`}>{result.name}</Styled.Link>
+      <Styled.Type>Brewery Type: {result.brewery_type}</Styled.Type>
       <Address brewery={result} />
-    </styled.Result>
+    </Styled.Result>
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, Fragment } from "react";
 
 import useDataApi from "./useDataApi";
 import { AUTOCOMPLETE_URL } from "./api";
-import * as styled from "./Autocomplete.style";
+import * as Styled from "./Autocomplete.style";
 
 function highlightFromQuery(text, query) {
   // Split text on query term, include term itself into parts, ignore case
@@ -23,15 +23,15 @@ function highlightFromQuery(text, query) {
 function List({ data, query }) {
   const rows = useMemo(() => {
     return data.map(result => (
-      <styled.ListItem key={result.id}>
-        <styled.Link to={result.id}>
+      <Styled.ListItem key={result.id}>
+        <Styled.Link to={result.id}>
           {highlightFromQuery(result.name, query)}
-        </styled.Link>
-      </styled.ListItem>
+        </Styled.Link>
+      </Styled.ListItem>
     ));
   }, [data, query]);
 
-  return data.length > 0 && <styled.List>{rows}</styled.List>;
+  return data.length > 0 && <Styled.List>{rows}</Styled.List>;
 }
 
 function Autocomplete({ query }) {
@@ -42,9 +42,9 @@ function Autocomplete({ query }) {
   }, [query, setUrl]);
 
   return (
-    <styled.Autocomplete>
+    <Styled.Autocomplete>
       <List data={results.data} query={query} />
-    </styled.Autocomplete>
+    </Styled.Autocomplete>
   );
 }
 

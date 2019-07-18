@@ -3,25 +3,25 @@ import Search from "./Search";
 import { Router } from "@reach/router";
 import Details from "./Details";
 import Results from "./Results";
-import * as styled from "./styled";
+import * as Styled from "./styled";
 import Emoji from "./Emoji";
 
 function Header({ children }) {
   return (
-    <styled.Header>
-      <styled.Logo>
-        <styled.H1>
+    <Styled.Header>
+      <Styled.Logo>
+        <Styled.H1>
           <Emoji label="Breweries" symbol="🍺" />
-        </styled.H1>
-      </styled.Logo>
-      <styled.SectionWithMargin>{children}</styled.SectionWithMargin>
-    </styled.Header>
+        </Styled.H1>
+      </Styled.Logo>
+      <Styled.SectionWithMargin>{children}</Styled.SectionWithMargin>
+    </Styled.Header>
   );
 }
 
 function App() {
   return (
-    <styled.Container>
+    <Styled.Container>
       <Header>
         <Search />
       </Header>
@@ -29,7 +29,7 @@ function App() {
         <Results path="/" />
         <Details path=":itemId" />
       </Router>
-    </styled.Container>
+    </Styled.Container>
   );
 }
 
