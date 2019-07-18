@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
+import PropTypes from "prop-types";
 import queryString from "query-string";
 
 import useDataApi from "./useDataApi";
@@ -56,3 +57,17 @@ function ResultsPage({ location: { search } }) {
 }
 
 export default ResultsPage;
+
+Result.propTypes = {
+  result: PropTypes.object
+};
+
+Results.propTypes = {
+  query: PropTypes.string
+};
+
+ResultsPage.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string
+  })
+};

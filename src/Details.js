@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+
 import useDataApi from "./useDataApi";
 import { BASE_URL } from "./api";
 import Loader from "./Loader";
@@ -46,3 +48,14 @@ function Details({ itemId }) {
 }
 
 export default Details;
+
+Details.propTypes = {
+  itemId: PropTypes.string
+};
+
+PlaceKitten.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
+  alt: PropTypes.string,
+  className: PropTypes.string
+};

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, Fragment } from "react";
+import PropTypes from "prop-types";
 
 import useDataApi from "./useDataApi";
 import { AUTOCOMPLETE_URL } from "./api";
@@ -49,3 +50,12 @@ function Autocomplete({ query }) {
 }
 
 export default Autocomplete;
+
+Autocomplete.propTypes = {
+  query: PropTypes.string
+};
+
+List.propTypes = {
+  data: PropTypes.array,
+  query: PropTypes.string
+};

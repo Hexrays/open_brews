@@ -1,12 +1,13 @@
 import React from "react";
-import Search from "./Search";
 import { Router, Link } from "@reach/router";
+
+import Search from "./Search";
 import Details from "./Details";
 import Results from "./Results";
 import * as Styled from "./styled";
 import Emoji from "./Emoji";
 
-function Header({ children }) {
+function Header() {
   return (
     <Styled.Header>
       <Styled.Logo>
@@ -16,7 +17,9 @@ function Header({ children }) {
           </Link>
         </Styled.H1>
       </Styled.Logo>
-      <Styled.SectionWithMargin>{children}</Styled.SectionWithMargin>
+      <Styled.SectionWithMargin>
+        <Search />
+      </Styled.SectionWithMargin>
     </Styled.Header>
   );
 }
@@ -24,9 +27,7 @@ function Header({ children }) {
 function App() {
   return (
     <Styled.Container>
-      <Header>
-        <Search />
-      </Header>
+      <Header />
       <Router>
         <Results path="/" />
         <Details path=":itemId" />

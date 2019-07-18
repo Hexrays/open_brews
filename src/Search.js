@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { navigate } from "@reach/router";
+
 import Autocomplete from "./Autocomplete";
 import Emoji from "./Emoji";
 import * as Styled from "./Search.style";
