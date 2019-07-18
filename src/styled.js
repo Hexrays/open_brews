@@ -57,4 +57,8 @@ export const H1 = styled.h1`
   font-size: 24px;
   text-align: center;
   margin-top: 18px;
+
+  a {
+    text-decoration: none;
+  }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./Search";
-import { Router } from "@reach/router";
+import { Router, Link } from "@reach/router";
 import Details from "./Details";
 import Results from "./Results";
 import * as Styled from "./styled";
@@ -11,7 +11,9 @@ function Header({ children }) {
     <Styled.Header>
       <Styled.Logo>
         <Styled.H1>
-          <Emoji label="Breweries" symbol="🍺" />
+          <Link to="/">
+            <Emoji label="Breweries" symbol="🍺" />
+          </Link>
         </Styled.H1>
       </Styled.Logo>
       <Styled.SectionWithMargin>{children}</Styled.SectionWithMargin>
